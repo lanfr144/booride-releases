@@ -1,14 +1,17 @@
+# Configuration per environment.
+# No secret is written here: DB_URL and API_KEY are read from the .env file
+# (or from real environment variables). ${NAME} is replaced by the loader.
+# This file can be committed; .env cannot.
 environments:
-  # DEMO ONLY: fake values. Real secrets never go in Git.
   dev:
-    DB_URL: "postgresql://dev_user:dev_pass@localhost:5432/dev_db"
-    API_KEY: "dev-12345"
+    DB_URL: "${DEV_DB_URL}"
+    API_KEY: "${DEV_API_KEY}"
     DEBUG: true
   staging:
-    DB_URL: "postgresql://staging_user:staging_pass@staging-db:5432/staging_db"
-    API_KEY: "staging-67890"
+    DB_URL: "${STAGING_DB_URL}"
+    API_KEY: "${STAGING_API_KEY}"
     DEBUG: true
   prod:
-    DB_URL: "postgresql://prod_user:prod_pass@prod-db:5432/prod_db"
-    API_KEY: "prod-abcdef"
+    DB_URL: "${PROD_DB_URL}"
+    API_KEY: "${PROD_API_KEY}"
     DEBUG: false
